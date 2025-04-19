@@ -2,4 +2,4 @@
 
 - Rock 🪨, Paper 📋, Scissors ✂️, Lizard 🦎, Spock 🖖
 
-- HTML, CSS y JS 
+- HTML, TailwindCSS y JS 
