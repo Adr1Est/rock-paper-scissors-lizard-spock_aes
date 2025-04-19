@@ -12,9 +12,9 @@ const indicador = document.querySelector("#indicador");
 let count = 0;
 let intervalo1;
 
-const losserClass = "text-lg text-red-500 font-semibold";
-const winnerClass = "text-lg text-green-500 font-semibold";
-const drawClass = "text-lg text-yellow-300 font-semibold";
+const losserClass = "text-lg text-red-500 font-semibold text-shadow-sm text-shadow-black";
+const winnerClass = "text-lg text-green-500 font-semibold text-shadow-sm text-shadow-black";
+const drawClass = "text-lg text-yellow-300 font-semibold text-shadow-sm text-shadow-black";
 
 const rockBtn = document.querySelector("#rock-btn");
 const paperBtn = document.querySelector("#paper-btn");
