@@ -18,9 +18,7 @@ const scissorsBtn = document.querySelector("#scissors-btn");
 const lizardBtn = document.querySelector("#lizard-btn");
 const spockBtn = document.querySelector("#spock-btn");
 
-const fichas = ["piedra", "papel", "tijera", "lagarto", "spock"];
-
-const misFichas = [
+const fichas = [
   { nombre: "piedra", img: "./assets/rock.png" },
   { nombre: "papel", img: "./assets/paper.png" },
   { nombre: "tijera", img: "./assets/scissors.png" },
@@ -76,7 +74,7 @@ const pptls = (eleccion, vs) => {
 
 //JUGADA ALEATORIA - CPU PLAYER
 function randomArrElement(arr) {
-  let jugada = arr[Math.floor(Math.random() * arr.length)]
+  let jugada = arr[Math.floor(Math.random() * arr.length)].nombre;
   return jugada;
 }
 
@@ -94,40 +92,39 @@ const imgSwitch = (arr) => {
 // FUNCIÓN PARA CAMBIAR LA IMAGEN EN FUNCIÓN DE LA SELECCIÓN
 const playerImg = (valor) => {
   contenerdoImagenPlayer.innerHTML = `
-    <img src="${misFichas[valor].img}" class="" width="250" alt="">`;
+    <img src="${fichas[valor].img}" class="" width="250" alt="">`;
 }
 
 rockBtn.addEventListener("change", () => {
-  console.log("Has seleccionado Piedra");
+  console.log(`Has seleccionado ${fichas[0].nombre}`);
   clearInterval(intervalo1);
   playerImg(rockBtn.value);
 });
 paperBtn.addEventListener("change", () => {
-  console.log("Has seleccionado Papel");
+  console.log(`Has seleccionado ${fichas[1].nombre}`);
   clearInterval(intervalo1);
   playerImg(paperBtn.value);
 });
 scissorsBtn.addEventListener("change", () => {
-  console.log(`Has seleccionado Tijeras`);
+  console.log(`Has seleccionado ${fichas[2].nombre}`);
   clearInterval(intervalo1);
   playerImg(scissorsBtn.value);
 });
 lizardBtn.addEventListener("change", () => {
-  console.log("Has seleccionado Lagarto");
+  console.log(`Has seleccionado ${fichas[3].nombre}`);
   clearInterval(intervalo1);
   playerImg(lizardBtn.value);
 });
 spockBtn.addEventListener("change", () => {
-  console.log("Has seleccionado Spock");
+  console.log(`Has seleccionado ${fichas[4].nombre}`);
   clearInterval(intervalo1);
   playerImg(spockBtn.value);
 });
 
 // EJECUTA AL CARGAR LA PÁGINA
 window.onload = () => {
-  intervalo1 = setInterval(() => { imgSwitch(misFichas) }, 500);
+  intervalo1 = setInterval(() => { imgSwitch(fichas) }, 500);
   setTimeout(() => { clearInterval(intervalo1) }, 60000);
-  console.log(misFichas[1].nombre);
 }
 
 console.log(pptls(randomArrElement(fichas), randomArrElement(fichas)));
